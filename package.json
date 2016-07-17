@@ -1,0 +1,21 @@
+{
+  "name": "fcc-shortenerurl",
+  "version": "1.0.0",
+  "description": "A freecodecamp exercice. Shortens a URL in a webapi JSON response",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "node",
+    "freecodecamp",
+    "rest"
+  ],
+  "author": "Lucas Batochi Pinheiro",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.4"
+  }
+}
