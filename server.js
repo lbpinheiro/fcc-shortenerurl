@@ -2,7 +2,7 @@
 
 var express = require('express');
 var routes = require('./app/routes/routes.js');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 
 var app = express();
 
@@ -11,7 +11,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
 }
 
-mongoose.connect(process.env.MONGO_URI);
+//mongoose.connect(process.env.MONGO_URI);
 
 routes(app);
 
