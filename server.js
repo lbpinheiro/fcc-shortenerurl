@@ -11,7 +11,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
 }
 
-mongo.connect(process.env.MONGO_URI, function(err, db) {
+mongo.connect(process.env.MONGODB_URI, function(err, db) {
   if (err) throw err;
 
   console.log('db=' + db);
