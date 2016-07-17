@@ -4,7 +4,7 @@
   "description": "A freecodecamp exercice. Shortens a URL in a webapi JSON response",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "node",
