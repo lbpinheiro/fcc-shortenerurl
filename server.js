@@ -2,7 +2,7 @@
 
 var express = require('express');
 var routes = require('./app/routes/routes.js');
-//var mongoose = require('mongoose');
+var mongo = require('mongodb').MongoClient;
 
 var app = express();
 
@@ -11,7 +11,11 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
 }
 
-//mongoose.connect(process.env.MONGO_URI);
+mongo.connect(process.env.MONGO_URI, function(err, db) {
+  if (err) throw err;
+
+  console.log('db=' + db);
+});
 
 routes(app);
 
