@@ -4,7 +4,7 @@ var Url = require('./models/url');
 
 function shortenUrl(url) {
 
-  return 'wow';
+  return 'fixed';
 }
 
 function getHostUrl(req) {
