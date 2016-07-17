@@ -20,5 +20,14 @@
     "mongoose": "^4.5.4",
     "serve-favicon": "^2.3.0",
     "url": "^0.11.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbpinheiro/fcc-shortenerurl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lbpinheiro/fcc-shortenerurl/issues"
+  },
+  "homepage": "https://github.com/lbpinheiro/fcc-shortenerurl#readme"
 }
