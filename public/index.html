@@ -2,15 +2,111 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Request Header API</title>
+    <title>URL Shortener</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
     <link rel="stylesheet" href="/stylesheets/main.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../../dist/images/favicon.png">
   </head>
-  <body>
+  <body class="timeStampApi">
 
-    oi
+    <div class="container">
+      <div class="ten columns">
+        <div class="center-text row">
+          <h1>URL Shortener API</h1>
+          <p>A <a href="https://www.freecodecamp.com/challenges/url-shortener-microservice">FreeCodeCamp</a> exercise</p>
+        </div>
+        <div class="row shiftDown">
+          <table class="u-full-width" id="usageTable">
+            <thead>
+              <tr>
+                <th>Route</th>
+                <th>HTTP Verb</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>/</th>
+                <th>GET</th>
+                <th>Shows this page <i class="fa fa-smile-o" aria-hidden="true"></i></th>
+              </tr>
+              <tr>
+                <th>/:url</th>
+                <th>GET</th>
+                <th>
+                  Many things can happen. Check below for details. 
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
+        <div class="row">
+          <h2>Here is how <em>:url</em> is processed</h2>
+          <ul>
+            <li>
+              <strong>Check if it is already saved in database as <em>original url</em>:</strong>
+              <p class="shiftRight">In that case returns a JSON containing both the original and <em>shortened url</em></p>
+            </li>
+            <li>
+              <strong>Is it saved as <em>shortened url</em>?</strong>
+              <p class="shiftRight">You've just been redirected!</p>
+            </li>
+            <li>
+              <strong>Is it a valid url?</strong>
+              <p class="shiftRight">The <em>shortened url</em> is generated and saved in database. A JSON is returned.</p>
+            </li>
+            <li>
+              <strong>It isn't a valid url.</strong>
+              <p class="shiftRight">Nothing to be done really, a JSON with an <em>error</em> is returned.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <h2>Returning JSON</h2>
+          <ul>
+            <li>Everything was smooth: <code>{ "originalUrl": [String], "shortenedUrl": [String] }</code></li>
+
+            <li>An error occurred: <code>{ "error": [String] }</code></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <h2>Example usage</h2>
+
+          <p><strong><i class="fa fa-link" aria-hidden="true"></i> Input</strong></p>
+          <p><code>https://fcc-shortenerurl.herokuapp.com/https://www.freecodecamp.com/lbpinheiro</code></p>
+          <strong>Result:</strong>
+          <p><code>{"originalUrl":"https://www.freecodecamp.com/lbpinheiro","shortenedUrl":"http://fcc-shortenerurl.herokuapp.com/j9vwpy"}</code></p>
+
+          <p class="shiftDown"><strong><i class="fa fa-link" aria-hidden="true"></i> Input</strong></p>
+          <p><code>http://fcc-shortenerurl.herokuapp.com/j9vwpy</code></p>
+          <strong>Result:</strong>
+          <p>Redirect to <code>https://www.freecodecamp.com/lbpinheiro</code></p>
+
+          <p class="shiftDown"><strong><i class="fa fa-link" aria-hidden="true"></i> Input</strong></p>
+          <p><code>http://fcc-shortenerurl.herokuapp.com/fu7733___2</code></p>
+          <strong>Result:</strong>
+          <p>The <em>:url</em> parameter is not a valid url neither a <em>shortened url</em></p>
+          <p><code>{"error":"not a valid url"}</code></p>
+
+        </div>
+
+        <div class="row center-text">
+          <hr/>
+          <p><a href="https://twitter.com/lucasdesenv">Lucas B. Pinheiro</a> 2016</p>
+          <p>This code is on Github <a href="https://github.com/lbpinheiro/fcc-shortenerurl">
+<img border="0" alt="Github logo" src="GitHub-Mark-32px.png">
+</a></p>
+        </div>
+
+      </div>
+    </div>
     <script>
     </script>
   </body>

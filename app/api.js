@@ -36,7 +36,7 @@ module.exports = {
    */
   redirect: function (req, res, next) {
     req.url = req.url.substr(1);
-
+    console.log('redirect ' + req.url);
     Url
       .findOne( {$or: [ {'shortenedUrl': req.url}, {'originalUrl': req.url} ]})
       .exec(function(err, result) {
