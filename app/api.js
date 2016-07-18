@@ -6,7 +6,7 @@ var possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 /**
  * Generates the shortened url
  */
-function shortenUrl(url) {
+function shortenUrl() {
   // inspired by: http://stackoverflow.com/questions/1349404/generate-a-string-of-5-random-characters-in-javascript
   var short = '';
   for( var i=0; i < 6; i++ )
@@ -32,7 +32,7 @@ function checkValidUrl(url) {
 
 module.exports = {
   /**
-   * It's the BRAIN of this project, handles all the redirection logic
+   * It's the BRAIN of this project, handles all the redirect logic
    */
   redirect: function (req, res, next) {
     req.url = req.url.substr(1);
@@ -62,7 +62,7 @@ module.exports = {
    * Insert the generated shortened url in the database for future access
    */
   insertShortenedUrl: function (req, res) {
-    var shortenedUrl = shortenUrl(req.url);
+    var shortenedUrl = shortenUrl();
 
     var newUrl = new Url({"originalUrl": req.url, "shortenedUrl": shortenedUrl});
     newUrl.save(function(err) {
